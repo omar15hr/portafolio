@@ -1,0 +1,124 @@
+---
+import Css from "./icons/Css.astro";
+import Express from "./icons/Express.astro";
+import Git from "./icons/Git.astro";
+import GitHub from "./icons/GitHub.astro";
+import Html from "./icons/Html.astro";
+import Javascript from "./icons/Javascript.astro";
+import Mongodb from "./icons/Mongodb.astro";
+import NextJS from "./icons/NextJS.astro";
+import NodeIcon from "./icons/NodeIcon.astro";
+import Postgresql from "./icons/Postgresql.astro";
+import Prisma from "./icons/Prisma.astro";
+import ReactSVG from "./icons/ReactSVG.astro";
+import Redux from "./icons/Redux.astro";
+import Shadcnui from "./icons/Shadcnui.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import TanStack from "./icons/TanStack.astro";
+import Typescript from "./icons/Typescript.astro";
+
+const TAGS = [
+  {
+    name: "Html",
+    class: "bg-[#003159] text-white",
+    icon: Html,
+  },
+  {
+    name: "Css",
+    class: "bg-[#003159] text-white",
+    icon: Css,
+  },
+  {
+    name: "Javascript",
+    class: "bg-[#003159] text-white",
+    icon: Javascript,
+  },
+  {
+    name: "Typescript",
+    class: "bg-[#003159] text-white",
+    icon: Typescript,
+  },
+  {
+    name: "Shadcnui",
+    class: "bg-[#003159] text-white",
+    icon: Shadcnui,
+  },
+  {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: ReactSVG,
+  },
+  {
+    name: "Redux",
+    class: "bg-[#003159] text-white",
+    icon: Redux,
+  },
+  {
+    name: "TanStack",
+    class: "bg-[#003159] text-white",
+    icon: TanStack,
+  },
+  {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  {
+    name: "Node.js",
+    class: "bg-black text-white",
+    icon: NodeIcon,
+  },
+  {
+    name: "Express.js",
+    class: "bg-black text-white",
+    icon: Express,
+  },
+  {
+    name: "MongoDB",
+    class: "bg-black text-white",
+    icon: Mongodb,
+  },
+  {
+    name: "PostgreSQL",
+    class: "bg-black text-white",
+    icon: Postgresql,
+  },
+  {
+    name: "Prisma",
+    class: "bg-black text-white",
+    icon: Prisma,
+  },
+  {
+    name: "Github",
+    class: "bg-black text-white",
+    icon: GitHub,
+  },
+  {
+    name: "Git",
+    class: "bg-black text-white",
+    icon: Git,
+  },
+];
+---
+
+<div>
+  <ul class="flex flex-wrap mb-2 gap-x-2">
+    {
+      TAGS.map((tag) => (
+        <li class="p-1">
+          <span
+            class={`flex flex-col justify-center items-center gap-2 gap-x-2 rounded-full text-xs text-white py-1 px-2 `}
+          >
+            <tag.icon class="size-10" />
+            {tag.name}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</div>
