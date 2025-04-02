@@ -39,11 +39,6 @@ const TAGS = [
     icon: Typescript,
   },
   {
-    name: "Shadcnui",
-    class: "bg-[#003159] text-white",
-    icon: Shadcnui,
-  },
-  {
     name: "React",
     class: "bg-[#003159] text-white",
     icon: ReactSVG,
@@ -62,6 +57,11 @@ const TAGS = [
     name: "Next.js",
     class: "bg-black text-white",
     icon: NextJS,
+  },
+  {
+    name: "Shadcnui",
+    class: "bg-[#003159] text-white",
+    icon: Shadcnui,
   },
   {
     name: "Tailwind CSS",
@@ -106,17 +106,17 @@ const TAGS = [
 ];
 ---
 
-<div>
-  <ul class="flex flex-wrap mb-2 gap-x-2">
+<div class="my-8">
+  <ul class="flex flex-wrap justify-center gap-4">
     {
       TAGS.map((tag) => (
-        <li class="p-1">
-          <span
-            class={`flex flex-col justify-center items-center gap-2 gap-x-2 rounded-full text-xs text-white py-1 px-2 `}
+        <li>
+          <div
+            class="flex flex-col items-center p-4 rounded-lg shadow-md transition-all duration-300 hover:scale-110 bg-gray-800/40 dark:bg-white/10 border border-gray-700/20 dark:border-white/10 backdrop-blur-sm"
           >
-            <tag.icon class="size-10" />
-            {tag.name}
-          </span>
+            <tag.icon class="size-12 mb-2" />
+            <span class="font-medium text-sm text-gray-800 dark:text-gray-100">{tag.name}</span>
+          </div>
         </li>
       ))
     }
