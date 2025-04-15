@@ -51,6 +51,7 @@ const PROJECTS = [
     github: "https://github.com/omar15hr/palette-generator",
     image: "/projects/palette-generator.webp",
     tags: [TAGS.REACTSVG, TAGS.TAILWIND, TAGS.NEXT, TAGS.TYPESCRIPT],
+    purpose: "Para la comunidad",
   },
   {
     title: "OmarUI - A UI library for React",
@@ -60,6 +61,7 @@ const PROJECTS = [
     github: "https://github.com/omar15hr/omar-ui",
     image: "/projects/omarui.webp",
     tags: [TAGS.REACTSVG, TAGS.TAILWIND, TAGS.NEXT, TAGS.TYPESCRIPT],
+    purpose: "Para la comunidad",
   },
   {
     title: "Task Manager - A Trello clone",
@@ -69,6 +71,7 @@ const PROJECTS = [
     github: "https://github.com/omar15hr/task-manager",
     image: "/projects/taskManager.webp",
     tags: [TAGS.REACTSVG, TAGS.TAILWIND, TAGS.SHADCNUI, TAGS.TYPESCRIPT],
+    purpose: "Para la comunidad",
   },
   {
     title: "Muscari Clothing - E-commerce of clothing",
@@ -78,6 +81,7 @@ const PROJECTS = [
     github: "https://github.com/omar15hr/Muscari",
     image: "/projects/muscari.webp",
     tags: [TAGS.NEXT, TAGS.TAILWIND, TAGS.TYPESCRIPT, TAGS.PAYPAL],
+    purpose: "Educativo",
   },
   {
     title: "Background Snippets",
@@ -87,62 +91,87 @@ const PROJECTS = [
     github: "https://github.com/omar15hr/background-snippets",
     image: "/projects/backgroundSnippets.webp",
     tags: [TAGS.REACTSVG, TAGS.TAILWIND],
+    purpose: "Para la comunidad",
   },
 ];
+
+type Purpose = "Para la comunidad" | "Educativo" | "Experiencia Laboral";
+
+const PURPOSE_CLASSES: Record<Purpose, string> = {
+  "Para la comunidad":
+    "bg-gradient-to-r from-blue-600 to-indigo-500 text-white",
+  Educativo: "bg-gradient-to-r from-green-600 to-emerald-500 text-white",
+  "Experiencia Laboral":
+    "bg-gradient-to-r from-yellow-500 to-orange-500 text-black",
+};
 ---
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              src={image}
-            />
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-            {title}
-          </h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
-              {tags.map((tag) => (
-                <li>
-                  <span
-                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                  >
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div class="mt-2 text-gray-700 dark:text-gray-400">
-              {description}
+    PROJECTS.map(
+      ({ image, title, description, tags, link, github, purpose }) => (
+        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0 items-center">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <img
+                alt="Recién llegado vs 5 años en Nueva Zelanda"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                src={image}
+              />
             </div>
-            <footer class="flex items-end justify-start mt-4 gap-x-4">
-              {github && (
-                <LinkButton href={github}>
-                  <GitHub class="size-6" />
-                  Code
-                </LinkButton>
-              )}
-              {link && (
-                <LinkButton href={link}>
-                  <Link class="size-4" />
-                  Preview
-                </LinkButton>
-              )}
-            </footer>
           </div>
-        </div>
-      </article>
-    ))
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              {title}
+            </h3>
+            <div class="flex flex-wrap mt-4">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="mt-2 text-gray-700 dark:text-gray-400">
+                {description}
+              </div>
+              <footer class="flex items-end justify-start mt-4 gap-x-4">
+                {github && (
+                  <LinkButton href={github}>
+                    <GitHub class="size-6" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link}>
+                    <Link class="size-4" />
+                    Preview
+                  </LinkButton>
+                )}
+                <div class="mr-5">
+                  {purpose && (
+                    <span
+                      class={`inline-flex border-gray-300 items-center justify-center gap-2 px-3 py-2 space-x-2 text-base transition border dark:border-gray-600 text-md group max-w-fit rounded-xl hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black ${
+                        PURPOSE_CLASSES[purpose as Purpose] ||
+                        "bg-gray-500 text-white"
+                      }`}
+                    >
+                      {purpose}
+                    </span>
+                  )}
+                </div>
+              </footer>
+            </div>
+          </div>
+        </article>
+      )
+    )
   }
 </div>
