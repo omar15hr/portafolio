@@ -8,8 +8,14 @@ import ReactSVG from "./icons/ReactSVG.astro";
 import Shadcnui from "./icons/Shadcnui.astro";
 import Typescript from "./icons/Typescript.astro";
 import Paypal from "./icons/Paypal.astro";
+import Angular from "./icons/Angular.astro";
 
 const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-[#52010c]",
+    icon: Angular
+  },
   PAYPAL: {
     name: "Paypal",
     class: "bg-[#002991] text-white",
@@ -43,6 +49,16 @@ const TAGS = {
 };
 
 const PROJECTS = [
+  {
+    title: "Gifs App - Search your favorite gifs",
+    description:
+      "Busca tus gifs favoritos. Aplicación creada con Angular v19, con signals, viewTransitions y sin módulos.",
+    link: "https://gifs-app-blue.vercel.app/dashboard/trending",
+    github: "https://github.com/omar15hr/gifs-app",
+    image: "/projects/gifs-app.jpg",
+    tags: [TAGS.ANGULAR, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+    purpose: "Educativo",
+  },
   {
     title: "Palette Generator - Generate your own color palette",
     description:
