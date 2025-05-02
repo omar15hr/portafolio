@@ -1,34 +1,35 @@
 import { useEffect, useState } from "react";
+import { GithubIcon, LinkedinIcon, LinkIcon } from "./Icons";
+import desktopImage from "../assets/images/desktop.webp";
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
-  const fullText = "Desarrollador Web Full Stack";
-
+  const fullText = "Desarrollador Full Stack";
 
   useEffect(() => {
-      let index = 0;
-      const timer = setInterval(() => {
-        setDisplayText(fullText.substring(0, index));
-        index++;
-        if (index > fullText.length) {
-          clearInterval(timer);
-        }
-      }, 100);
-  
-      return () => clearInterval(timer);
-    }, []);
+    let index = 0;
+    const timer = setInterval(() => {
+      setDisplayText(fullText.substring(0, index));
+      index++;
+      if (index > fullText.length) {
+        clearInterval(timer);
+      }
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <section
       id="inicio"
       className="min-h-screen flex items-center relative overflow-hidden pt-20"
     >
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 mask-b-from-90% mask-b-to-95%">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
         <img
-          src="https://readdy.ai/api/search-image?query=Modern%20minimalist%20workspace%20with%20laptop%2C%20clean%20desk%20setup%2C%20soft%20natural%20lighting%2C%20elegant%20professional%20environment%2C%20high-end%20tech%20workspace%2C%20subtle%20blue%20accents%2C%20creative%20workspace%2C%20high%20resolution%20photography%2C%20soft%20focus%20background&width=1440&height=800&seq=hero1&orientation=landscape"
+          src={desktopImage}
           alt="Hero background"
-          className="w-full h-full object-cover object-top"
+          className="size-full object-cover object-top"
         />
       </div>
 
@@ -38,7 +39,7 @@ export function HeroSection() {
             ¡Hola! Soy
           </h2>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            Carlos Mendoza
+            Omar Hernández
           </h1>
           <div className="h-8">
             <h3 className="text-xl md:text-2xl font-medium text-gray-700">
@@ -51,37 +52,34 @@ export function HeroSection() {
             enfoque en usabilidad, rendimiento y diseño moderno.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-            <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap !rounded-button">
-              <i className="fas fa-download mr-2"></i>Descargar CV
-            </button>
-            <button className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap !rounded-button">
+            <a
+              href="#"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap"
+            >
+              Ver CV
+              <LinkIcon />
+            </a>
+            <a
+              href="#proyectos"
+              className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
+            >
               Ver Proyectos
-            </button>
+            </a>
           </div>
           <div className="flex space-x-4 mt-8 justify-center md:justify-start">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/omar-alejandro-hernandez-diaz/"
+              target="_blank"
               className="text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
             >
-              <i className="fab fa-linkedin text-2xl"></i>
+              <LinkedinIcon />
             </a>
             <a
-              href="#"
+              href="https://github.com/omar15hr"
+              target="_blank"
               className="text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
             >
-              <i className="fab fa-github text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
-            >
-              <i className="fab fa-twitter text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-blue-600 transition-colors duration-300 cursor-pointer"
-            >
-              <i className="fas fa-envelope text-2xl"></i>
+              <GithubIcon />
             </a>
           </div>
         </div>
