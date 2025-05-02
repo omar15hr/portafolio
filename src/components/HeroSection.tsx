@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="min-h-screen flex items-center relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center relative overflow-hidden pt-10"
     >
       <div className="absolute inset-0 z-0 mask-b-from-90% mask-b-to-95%">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
@@ -47,7 +47,7 @@ export function HeroSection() {
               <span className="animate-pulse">|</span>
             </h3>
           </div>
-          <p className="text-gray-600 my-6 max-w-lg mx-auto md:mx-0">
+          <p className="text-lg text-gray-600 my-6 max-w-xl mx-auto md:mx-0">
             Creando experiencias digitales atractivas y funcionales con un
             enfoque en usabilidad, rendimiento y diseño moderno.
           </p>

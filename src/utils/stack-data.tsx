@@ -1,0 +1,63 @@
+import {
+  AngularIcon,
+  CodeIcon,
+  CSSIcon,
+  ExpressjsIcon,
+  GithubIcon,
+  GitIcon,
+  HTML5Icon,
+  JavaScriptIcon,
+  MongoDBIcon,
+  NestJSIcon,
+  NextjsIcon,
+  NodejsIcon,
+  PostgreSQLIcon,
+  ReactIcon,
+  ServerIcon,
+  TailwindCSSIcon,
+  ToolsIcon,
+  TypeScriptIcon,
+  VisualStudioCodeIcon,
+  VueIcon,
+} from "../components/Icons";
+
+export const stackData = [
+  {
+    title: "Frontend",
+    Icon: <CodeIcon />,
+    bgColor: "bg-blue-50",
+    skills: [
+      { name: "HTML5", icon: <HTML5Icon /> },
+      { name: "CSS3", icon: <CSSIcon /> },
+      { name: "JavaScript", icon: <JavaScriptIcon /> },
+      { name: "React", icon: <ReactIcon /> },
+      { name: "TypeScript", icon: <TypeScriptIcon /> },
+      { name: "Angular", icon: <AngularIcon /> },
+      { name: "Vue", icon: <VueIcon /> },
+      { name: "Next Js", icon: <NextjsIcon /> },
+      { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
+    ],
+  },
+  {
+    title: "Backend",
+    Icon: <ServerIcon />,
+    bgColor: "bg-indigo-50",
+    skills: [
+      { name: "Node Js", icon: <NodejsIcon /> },
+      { name: "Express", icon: <ExpressjsIcon /> },
+      { name: "Nest Js", icon: <NestJSIcon /> },
+      { name: "Mongo", icon: <MongoDBIcon /> },
+      { name: "Postgres", icon: <PostgreSQLIcon /> },
+    ],
+  },
+  {
+    title: "Herramientas & Otros",
+    Icon: <ToolsIcon />,
+    bgColor: "bg-purple-50",
+    skills: [
+      { name: "Visual Studio Code", icon: <VisualStudioCodeIcon /> },
+      { name: "Git", icon: <GitIcon /> },
+      { name: "Github", icon: <GithubIcon /> },
+    ],
+  },
+];

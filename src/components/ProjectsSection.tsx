@@ -10,7 +10,7 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center">
           <div className="inline-flex rounded-md shadow-sm">
             <button className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-l-lg cursor-pointer whitespace-nowrap !rounded-button">
               Todos
