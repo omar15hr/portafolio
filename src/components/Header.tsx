@@ -1,155 +1,93 @@
-import { useEffect, useState } from "react";
+import { useHeaderNavigation } from "../hooks/useHeaderNavigation";
+import { CloseIcon, ToggleIcon } from "./Icons";
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState("inicio");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [hasScrolled, setHasScrolled] = useState(false);
+  const {
+    hasScrolled,
+    scrollToSection,
+    navigationItems,
+    isMenuOpen,
+    activeSection,
+    toggleMenu,
+  } = useHeaderNavigation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setHasScrolled(scrollPosition > 50);
-
-      // Determine active section based on scroll position
-      const sections = document.querySelectorAll("section");
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionHeight = section.offsetHeight;
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(section.id);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 80,
-        behavior: "smooth",
-      });
-      setActiveSection(sectionId);
-      closeMenu();
-    }
-  };
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         hasScrolled
-          ? "bg-white/80 shadow-md backdrop-blur-md"
+          ? "bg-white/90 shadow-md backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
         <a
           href="#inicio"
-          className="text-2xl font-bold text-gray-800 cursor-pointer"
-          onClick={() => scrollToSection("inicio")}
+          className="text-xl sm:text-2xl font-bold text-gray-800 transition-colors hover:text-blue-600"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("inicio");
+          }}
         >
-          Carlos Mendoza
+          Omar Hernández
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          {[
-            "inicio",
-            "stacks",
-            "proyectos",
-            "experiencia",
-            "educacion",
-            "sobre-mi",
-          ].map((item) => (
+        <nav className="hidden md:flex items-center space-x-1 lg:space-x-6">
+          {navigationItems.map((item) => (
             <button
-              key={item}
-              onClick={() => scrollToSection(item)}
-              className={`text-base font-medium transition-colors duration-300 cursor-pointer whitespace-nowrap !rounded-button ${
-                activeSection === item
-                  ? "text-blue-600"
-                  : "text-gray-600 hover:text-blue-500"
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className={`px-2 py-1 text-sm lg:text-base font-medium transition-all duration-300 hover:text-blue-500 rounded-md ${
+                activeSection === item.id
+                  ? "text-blue-600 font-semibold"
+                  : "text-gray-600"
               }`}
             >
-              {item === "inicio"
-                ? "Inicio"
-                : item === "stacks"
-                ? "Tecnologías"
-                : item === "proyectos"
-                ? "Proyectos"
-                : item === "experiencia"
-                ? "Experiencia"
-                : item === "educacion"
-                ? "Educación"
-                : "Sobre Mí"}
+              {item.label}
             </button>
           ))}
-          <button className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer whitespace-nowrap !rounded-button">
+          <button className="ml-2 px-4 py-2 bg-blue-600 text-white text-sm lg:text-base rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm hover:shadow">
             Contacto
           </button>
         </nav>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-gray-800 focus:outline-none cursor-pointer whitespace-nowrap !rounded-button"
+          className="md:hidden text-gray-800 focus:outline-none p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
           onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
         >
-          <i
-            className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"} text-2xl`}
-          ></i>
+          {isMenuOpen ? <CloseIcon /> : <ToggleIcon />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       <div
-        className={`md:hidden bg-white absolute w-full left-0 shadow-lg transition-transform duration-300 transform ${
-          isMenuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`md:hidden absolute w-full left-0 top-full transition-all duration-300 transform origin-top ${
+          isMenuOpen
+            ? "opacity-100 scale-y-100 shadow-lg"
+            : "opacity-0 scale-y-0 pointer-events-none"
         }`}
       >
-        <div className="container mx-auto px-6 py-4 flex flex-col space-y-4">
-          {[
-            "inicio",
-            "stacks",
-            "proyectos",
-            "experiencia",
-            "educacion",
-            "sobre-mi",
-          ].map((item) => (
-            <button
-              key={item}
-              onClick={() => scrollToSection(item)}
-              className={`text-base py-2 font-medium transition-colors duration-300 cursor-pointer whitespace-nowrap !rounded-button ${
-                activeSection === item ? "text-blue-600" : "text-gray-600"
-              }`}
-            >
-              {item === "inicio"
-                ? "Inicio"
-                : item === "stacks"
-                ? "Tecnologías"
-                : item === "proyectos"
-                ? "Proyectos"
-                : item === "experiencia"
-                ? "Experiencia"
-                : item === "educacion"
-                ? "Educación"
-                : "Sobre Mí"}
+        <div className="bg-white py-2 px-4 border-t border-gray-100">
+          <div className="flex flex-col space-y-2">
+            {navigationItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-left px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                  activeSection === item.id
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-600 hover:bg-gray-50"
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <button className="mt-2 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center font-medium">
+              Contacto
             </button>
-          ))}
-          <button className="py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer whitespace-nowrap !rounded-button">
-            Contacto
-          </button>
+          </div>
         </div>
       </div>
     </header>
