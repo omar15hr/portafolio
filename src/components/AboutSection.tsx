@@ -1,5 +1,4 @@
 import { toast } from "sonner";
-import { ContactForm } from "./ContactForm";
 import { LinkIcon, MailIcon } from "./Icons";
 import { useState } from "react";
 
@@ -20,7 +19,6 @@ export function AboutSection() {
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
             <div className="relative">
               <div className="absolute inset-0 bg-blue-200 rounded-xl transform rotate-3"></div>
-              
             </div>
           </div>
 
@@ -97,7 +95,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        <ContactForm />
+        {/* <ContactForm /> */}
       </div>
     </section>
   );
