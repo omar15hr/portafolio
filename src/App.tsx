@@ -1,3 +1,4 @@
+import { Toaster } from "sonner";
 import { AboutSection } from "./components/AboutSection";
 import { EducationSection } from "./components/EducationSection";
 import { ExperienceSection } from "./components/ExperienceSection";
@@ -17,6 +18,7 @@ function App() {
       <ExperienceSection />
       <EducationSection />
       <AboutSection />
+      <Toaster />
       <Footer />
     </div>
   );

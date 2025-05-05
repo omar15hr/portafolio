@@ -53,7 +53,8 @@ export function HeroSection() {
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1fIsCUGJsVw9Yn575a6g2dg6n8rBCGBvi/view?usp=sharing"
+              target="_blank"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap"
             >
               Ver CV

@@ -46,9 +46,6 @@ export function Header() {
               {item.label}
             </button>
           ))}
-          <button className="ml-2 px-4 py-2 bg-blue-600 text-white text-sm lg:text-base rounded-lg hover:bg-blue-700 transition-colors duration-300 shadow-sm hover:shadow">
-            Contacto
-          </button>
         </nav>
 
         {/* Mobile Menu Button */}
