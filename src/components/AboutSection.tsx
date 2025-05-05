@@ -1,3 +1,6 @@
+import { ContactForm } from "./ContactForm";
+import { LinkIcon } from "./Icons";
+
 export function AboutSection() {
   return (
     <section id="sobre-mi" className="py-20 bg-gray-50">
@@ -17,10 +20,10 @@ export function AboutSection() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre Mí</h2>
             <p className="text-gray-600 mb-6">
-              Soy un desarrollador web full stack con más de 5 años de
+              Soy un desarrollador web full stack con 1 año de
               experiencia creando aplicaciones web modernas y escalables. Mi
               pasión es construir productos digitales que sean tanto funcionales
-              como estéticamente atractivos.
+              como atractivos.
             </p>
             <p className="text-gray-600 mb-6">
               Mi enfoque se centra en la experiencia del usuario, la
@@ -50,84 +53,14 @@ export function AboutSection() {
               <button className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap !rounded-button">
                 <i className="fas fa-envelope mr-2"></i>Contactarme
               </button>
-              <button className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap !rounded-button">
-                <i className="fas fa-download mr-2"></i>Descargar CV
+              <button className="flex gap-3 px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap !rounded-button">
+                <LinkIcon />CV
               </button>
             </div>
           </div>
         </div>
 
-        <div className="mt-20">
-          <h3 className="text-2xl font-bold mb-8 text-center">Contacto</h3>
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Nombre
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300"
-                  placeholder="Tu nombre"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300"
-                  placeholder="tu@email.com"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Asunto
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300"
-                  placeholder="Asunto del mensaje"
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700 mb-1"
-                >
-                  Mensaje
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-300"
-                  placeholder="Tu mensaje aquí..."
-                ></textarea>
-              </div>
-              <div className="md:col-span-2 text-center">
-                <button
-                  type="submit"
-                  className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap !rounded-button"
-                >
-                  Enviar Mensaje <i className="fas fa-paper-plane ml-2"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <ContactForm />
       </div>
     </section>
   );
