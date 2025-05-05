@@ -753,3 +753,47 @@ export const GitHubIcon = () => (
     />
   </svg>
 );
+
+export const ComputerIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={28}
+    height={28}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-device-imac"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M3 4a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-12z" />
+    <path d="M3 13h18" />
+    <path d="M8 21h8" />
+    <path d="M10 17l-.5 4" />
+    <path d="M14 17l.5 4" />
+  </svg>
+);
+
+export const AsteriskIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={18}
+    height={18}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="icon icon-tabler icons-tabler-outline icon-tabler-asterisk-simple"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M12 12v-9" />
+    <path d="M12 12l-9 -2.5" />
+    <path d="M12 12l9 -2.5" />
+    <path d="M12 12l6 8.5" />
+    <path d="M12 12l-6 8.5" />
+  </svg>
+);
