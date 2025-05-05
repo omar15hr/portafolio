@@ -20,11 +20,7 @@ export function AboutSection() {
           <div className="md:w-1/2 mb-10 md:mb-0 md:pr-10">
             <div className="relative">
               <div className="absolute inset-0 bg-blue-200 rounded-xl transform rotate-3"></div>
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20portrait%20of%20a%20Latino%20male%20software%20developer%20in%20his%2030s%2C%20casual%20professional%20attire%2C%20friendly%20smile%2C%20modern%20office%20background%2C%20soft%20lighting%2C%20high%20quality%20professional%20headshot%2C%20natural%20pose&width=600&height=700&seq=profile1&orientation=portrait"
-                alt="Carlos Mendoza"
-                className="relative z-10 rounded-xl shadow-lg w-full h-auto object-cover"
-              />
+              
             </div>
           </div>
 

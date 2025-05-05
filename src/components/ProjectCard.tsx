@@ -7,6 +7,8 @@ interface Project {
   image: string;
   tags: string[];
   category: string;
+  code: string;
+  link: string;
 }
 
 export function ProjectCard({
@@ -15,6 +17,8 @@ export function ProjectCard({
   image,
   tags,
   category,
+  code,
+  link,
 }: Project) {
   return (
     <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
@@ -42,8 +46,16 @@ export function ProjectCard({
           ))}
         </div>
         <div className="flex gap-4 py-2 items-center">
-          <ActionButton icon={<LinkIcon size={24} />} label="Demo" />
-          <ActionButton icon={<CodeIcon size={24} />} label="Código" />
+          <ActionButton
+            href={link}
+            icon={<LinkIcon size={24} />}
+            label="Demo"
+          />
+          <ActionButton
+            href={code}
+            icon={<CodeIcon size={24} />}
+            label="Código"
+          />
         </div>
       </div>
     </div>
