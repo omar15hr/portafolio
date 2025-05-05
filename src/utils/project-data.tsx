@@ -11,6 +11,6 @@ export const projectsData = [
     tags: ["React", "Vite", "Zustand", "TypeScript", "Dnd Kit", "Tailwind CSS"],
     category: "Frontend",
     code: "https://github.com/omar15hr/nextdo",
-    link: "https://nextdo-one.vercel.app/",
+    link: "https://nextdo-omarher.vercel.app/",
   },
 ];
