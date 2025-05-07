@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { AsteriskIcon, ComputerIcon } from "./Icons";
+import { ComputerIcon } from "./Icons";
 
 interface Props {
   id: number;
@@ -50,14 +50,32 @@ export function ExperiencieCard({
           </div>
           <p className="text-gray-500 text-sm mb-4">{period}</p>
           <p className="text-gray-600 text-md mb-4">{description}</p>
-          <ul className="space-y-2 text-sm text-gray-600">
-            {achievements.map((achievement, i) => (
-              <li key={i} className="flex items-start gap-3">
-                <AsteriskIcon />
-                <span className="text-xs">{achievement}</span>
-              </li>
-            ))}
-          </ul>
+          
+          <div className="mt-6">
+            <h4 className="text-md font-semibold text-gray-700 mb-3 flex items-center">
+              <span className="mr-2">✨</span>
+              <span>Logros destacados</span>
+            </h4>
+            <ul className="space-y-3">
+              {achievements.map((achievement, i) => (
+                <li 
+                  key={i} 
+                  className={`group flex items-center gap-3 p-3 rounded-lg transition-all duration-300 hover:translate-x-1 ${
+                    id % 2 === 0
+                      ? "bg-gradient-to-r from-blue-50 to-blue-100 text-blue-700"
+                      : "bg-gradient-to-r from-indigo-50 to-indigo-100 text-indigo-700"
+                  }`}
+                >
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                    id % 2 === 0 ? "bg-blue-200" : "bg-indigo-200"
+                  }`}>
+                    <span className="text-sm font-bold">{i + 1}</span>
+                  </div>
+                  <span className="text-sm font-medium">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
