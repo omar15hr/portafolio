@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { GithubIcon, LinkedinIcon, LinkIcon } from "./Icons";
 import desktopImage from "../assets/images/desktop.webp";
+import { motion } from "motion/react";
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -52,20 +53,28 @@ export function HeroSection() {
             enfoque en usabilidad, rendimiento y diseño moderno.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-            <a
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
               href="https://drive.google.com/file/d/1fIsCUGJsVw9Yn575a6g2dg6n8rBCGBvi/view?usp=sharing"
               target="_blank"
               className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer whitespace-nowrap"
             >
               Ver CV
               <LinkIcon />
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.3 }}
               href="#proyectos"
               className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-all duration-300 cursor-pointer whitespace-nowrap"
             >
               Ver Proyectos
-            </a>
+            </motion.a>
           </div>
           <div className="flex space-x-4 mt-8 justify-center md:justify-start">
             <a
