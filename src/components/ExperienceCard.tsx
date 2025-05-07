@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { AsteriskIcon, ComputerIcon } from "./Icons";
 
 interface Props {
@@ -18,7 +19,13 @@ export function ExperiencieCard({
   achievements,
 }: Props) {
   return (
-    <div className="relative flex flex-col md:flex-row items-center">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="relative flex flex-col md:flex-row items-center"
+    >
       <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full bg-blue-600 z-10 shadow-lg"></div>
 
       <div
@@ -69,6 +76,6 @@ export function ExperiencieCard({
           <ComputerIcon />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

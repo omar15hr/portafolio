@@ -19,25 +19,14 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center">
-        <a
-          href="#inicio"
-          className="text-xl sm:text-2xl font-bold text-gray-800 transition-colors hover:text-blue-600"
-          onClick={(e) => {
-            e.preventDefault();
-            scrollToSection("inicio");
-          }}
-        >
-          Omar Hernández
-        </a>
-
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-center items-center">
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-1 lg:space-x-6">
           {navigationItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`px-2 py-1 text-sm lg:text-base font-medium transition-all duration-300 hover:text-blue-500 rounded-md ${
+              className={`px-2 py-1 text-sm lg:text-base font-medium transition-all duration-300 hover:text-blue-500 rounded-md cursor-pointer ${
                 activeSection === item.id
                   ? "text-blue-600 font-semibold"
                   : "text-gray-600"

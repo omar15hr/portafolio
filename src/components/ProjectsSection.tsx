@@ -5,7 +5,7 @@ export function ProjectsSection() {
   return (
     <section id="proyectos" className="py-20 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Mis Proyectos</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Una selección de mis trabajos más recientes y destacados en

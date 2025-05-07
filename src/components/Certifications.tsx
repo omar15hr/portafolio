@@ -1,4 +1,11 @@
-import { AngularIcon, JavaScriptIcon, NextjsIcon, NodejsIcon, ReactIcon } from "./Icons";
+import { motion } from "motion/react";
+import {
+  AngularIcon,
+  JavaScriptIcon,
+  NextjsIcon,
+  NodejsIcon,
+  ReactIcon,
+} from "./Icons";
 
 const CERTIFICATIONS = [
   {
@@ -51,7 +58,11 @@ export function Certifications() {
       <h3 className="text-2xl font-bold mb-6 text-center">Certificaciones</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {CERTIFICATIONS.map((cert, index) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
             key={index}
             className="bg-white p-4 rounded-lg border border-gray-100 shadow hover:shadow-md transition-shadow duration-300 flex items-center"
           >
@@ -76,7 +87,7 @@ export function Certifications() {
                 {cert.issuer} • {cert.date}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

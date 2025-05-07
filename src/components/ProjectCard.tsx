@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { ActionButton } from "./ActionButton";
 import { CodeIcon, LinkIcon } from "./Icons";
 
@@ -21,7 +22,13 @@ export function ProjectCard({
   link,
 }: Project) {
   return (
-    <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+    >
       <div className="relative h-48 overflow-hidden">
         <img
           src={image}
@@ -58,6 +65,6 @@ export function ProjectCard({
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

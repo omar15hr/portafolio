@@ -1,5 +1,5 @@
 import { Certifications } from "./Certifications";
-import { SchoolIcon } from "./Icons";
+import { EducationCard } from "./EducationCard";
 
 const EDUCATION = [
   {
@@ -26,45 +26,7 @@ export function EducationSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {EDUCATION.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-100 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
-            >
-              <div
-                className={`h-2 ${
-                  edu.color === "blue" ? "bg-blue-600" : "bg-indigo-600"
-                }`}
-              ></div>
-              <div className="p-6">
-                <div className="flex items-start">
-                  <div
-                    className={`w-12 h-12 rounded-full flex items-center justify-center mr-4 ${
-                      edu.color === "blue"
-                        ? "bg-blue-100 text-blue-600"
-                        : "bg-indigo-100 text-indigo-600"
-                    }`}
-                  >
-                    <div className="mx-4">
-                      <SchoolIcon />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold mb-1">{edu.degree}</h3>
-                    <p
-                      className={`text-sm font-medium ${
-                        edu.color === "blue"
-                          ? "text-blue-600"
-                          : "text-indigo-600"
-                      } mb-2`}
-                    >
-                      {edu.institution}
-                    </p>
-                    <p className="text-gray-500 text-sm mb-3">{edu.period}</p>
-                    <p className="text-gray-600">{edu.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <EducationCard {...edu} key={index} />
           ))}
         </div>
 
