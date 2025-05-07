@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { JSX } from "react";
 
 type Skill = {
@@ -19,7 +20,13 @@ export function StackCategory({
   skills,
 }: StackCategoryProps) {
   return (
-    <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+    >
       <div className="text-center mb-6">
         <div className={`inline-block p-4 ${bgColor} rounded-full mb-4`}>
           {Icon}
@@ -35,6 +42,6 @@ export function StackCategory({
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 }
