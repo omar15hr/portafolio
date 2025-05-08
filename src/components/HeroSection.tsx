@@ -34,7 +34,7 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-20">
+      <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center relative z-20">
         <div className="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
           <h2 className="text-xl md:text-2xl font-medium text-blue-600 mb-3">
             ¡Hola! Soy
