@@ -1,4 +1,5 @@
 import nextdo from "../assets/projects/nextdo.webp";
+import muscari from "../assets/projects/muscari.webp";
 
 export const projectFilters = ["Todos", "Frontend", "Backend", "Full Stack"];
 
@@ -12,5 +13,15 @@ export const projectsData = [
     category: "Frontend",
     code: "https://github.com/omar15hr/nextdo",
     link: "https://nextdo-omarher.vercel.app/",
+  },
+  {
+    title: "Muscari",
+    description:
+      "Plataforma Ecommerce para la venta de productos de moda. Carrito de compras, filtrado de productos y pasarela de pago.",
+    image: muscari,
+    tags: ["React", "Next Js", "Zustand", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker"],
+    category: "Full Stack",
+    code: "https://github.com/omar15hr/Muscari",
+    link: "https://muscari.vercel.app/",
   },
 ];
