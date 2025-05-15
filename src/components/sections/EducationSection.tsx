@@ -1,5 +1,5 @@
-import { Certifications } from "./Certifications";
-import { EducationCard } from "./EducationCard";
+import { Certifications } from "../Certifications";
+import { EducationCard } from "../EducationCard";
 
 const EDUCATION = [
   {

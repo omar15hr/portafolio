@@ -1,12 +1,13 @@
 import { Toaster } from "sonner";
-import { AboutSection } from "./components/AboutSection";
-import { EducationSection } from "./components/EducationSection";
-import { ExperienceSection } from "./components/ExperienceSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
-import { HeroSection } from "./components/HeroSection";
-import { ProjectsSection } from "./components/ProjectsSection";
-import { StacksSection } from "./components/StacksSection";
+import { AboutSection } from "./components/sections/AboutSection";
+import { EducationSection } from "./components/sections/EducationSection";
+import { ExperienceSection } from "./components/sections/ExperienceSection";
+import { HeroSection } from "./components/sections/HeroSection";
+import { ProjectsSection } from "./components/sections/ProjectsSection";
+import { StacksSection } from "./components/sections/StacksSection";
+
 
 function App() {
   return (

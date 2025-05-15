@@ -1,5 +1,5 @@
-import { projectFilters, projectsData } from "../utils/project-data";
-import { ProjectCard } from "./ProjectCard";
+import { projectFilters, projectsData } from "../../utils/project-data";
+import { ProjectCard } from "../ProjectCard";
 
 export function ProjectsSection() {
   return (

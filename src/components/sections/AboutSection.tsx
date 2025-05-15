@@ -1,5 +1,5 @@
 import { toast } from "sonner";
-import { LinkIcon, MailIcon } from "./Icons";
+import { LinkIcon, MailIcon } from "../Icons";
 import { useState } from "react";
 
 export function AboutSection() {

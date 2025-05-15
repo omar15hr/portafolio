@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { GithubIcon, LinkedinIcon, LinkIcon } from "./Icons";
-import desktopImage from "../assets/images/desktop.webp";
+import { GithubIcon, LinkedinIcon, LinkIcon } from "../Icons";
+import desktopImage from "../../assets/images/desktop.webp";
 import { motion } from "motion/react";
 
 export function HeroSection() {

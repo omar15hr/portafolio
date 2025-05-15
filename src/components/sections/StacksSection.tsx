@@ -1,5 +1,5 @@
-import { stackData } from "../utils/stack-data";
-import { StackCategory } from "./StackCategory";
+import { stackData } from "../../utils/stack-data";
+import { StackCategory } from "../StackCategory";
 
 export function StacksSection() {
   return (

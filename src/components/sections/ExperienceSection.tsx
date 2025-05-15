@@ -1,4 +1,4 @@
-import { ExperiencieCard } from "./ExperienceCard";
+import { ExperiencieCard } from "../ExperienceCard";
 
 const EXPERIENCE = [
   {
