@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { GithubIcon, LinkedinIcon, LinkIcon } from "../Icons";
 import desktopImage from "../../assets/images/desktop.webp";
 import { motion } from "motion/react";
-import AnimatedSection, { fadeIn } from "./AnimatedSection";
+import AnimatedSection from "./AnimatedSection";
+import { fadeIn } from "../AnimationsVariants";
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
