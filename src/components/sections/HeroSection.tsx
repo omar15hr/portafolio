@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { GithubIcon, LinkedinIcon, LinkIcon } from "../Icons";
 import desktopImage from "../../assets/images/desktop.webp";
 import { motion } from "motion/react";
+import AnimatedSection, { fadeIn } from "./AnimatedSection";
 
 export function HeroSection() {
   const [displayText, setDisplayText] = useState("");
@@ -52,7 +53,11 @@ export function HeroSection() {
             Creando experiencias digitales atractivas y funcionales con un
             enfoque en usabilidad, rendimiento y diseño moderno.
           </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+          <AnimatedSection
+            variants={fadeIn("up", 0.4)}
+            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start"
+            viewport={{ once: true }}
+          >
             <motion.a
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -75,7 +80,7 @@ export function HeroSection() {
             >
               Ver Proyectos
             </motion.a>
-          </div>
+          </AnimatedSection>
           <div className="flex space-x-4 mt-8 justify-center md:justify-start">
             <a
               href="https://www.linkedin.com/in/omar-alejandro-hernandez-diaz/"
