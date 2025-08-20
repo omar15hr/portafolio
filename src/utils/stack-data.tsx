@@ -1,5 +1,4 @@
 import {
-  AngularIcon,
   CodeIcon,
   CSSIcon,
   ExpressjsIcon,
@@ -18,7 +17,6 @@ import {
   ToolsIcon,
   TypeScriptIcon,
   VisualStudioCodeIcon,
-  VueIcon,
 } from "../components/Icons";
 
 export const stackData = [
@@ -32,8 +30,6 @@ export const stackData = [
       { name: "JavaScript", icon: <JavaScriptIcon /> },
       { name: "React", icon: <ReactIcon /> },
       { name: "TypeScript", icon: <TypeScriptIcon /> },
-      { name: "Angular", icon: <AngularIcon /> },
-      { name: "Vue", icon: <VueIcon /> },
       { name: "Next Js", icon: <NextjsIcon /> },
       { name: "Tailwind CSS", icon: <TailwindCSSIcon /> },
     ],

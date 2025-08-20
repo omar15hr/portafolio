@@ -56,7 +56,7 @@ export function ProjectCard({
           <ActionButton
             href={link}
             icon={<LinkIcon size={24} />}
-            label="Demo"
+            label="Ver Proyecto"
           />
           <ActionButton
             href={code}
