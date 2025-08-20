@@ -25,7 +25,7 @@ export function AboutSection() {
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre Mí</h2>
             <p className="text-gray-600 mb-6">
-              Soy un desarrollador web full stack con 1 año de experiencia
+              Soy un desarrollador web Full Stack con 1 año de experiencia
               creando aplicaciones web modernas y escalables. Mi pasión es
               construir productos digitales que sean tanto funcionales como
               atractivos.

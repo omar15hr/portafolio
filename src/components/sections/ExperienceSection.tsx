@@ -3,8 +3,21 @@ import { ExperiencieCard } from "../ExperienceCard";
 const EXPERIENCE = [
   {
     id: 1,
+    company: "Dogleader.",
+    position: "Full Stack Developer",
+    period: "Mayo 2025 - Agosto 2025",
+    description:
+      "Desarrollo de interfaz de usuario para una escuela de adiestramiento canino. Cuenta con páginas informativas, un blog y recursos de contenido para los usuarios.",
+    achievements: [
+      "Diseño completo de la plataforma principal.",
+      "Implementación de sistema de componentes reutilizables",
+      "Funciones del sitio como botón de comunicación mediante Whatsapp.",
+    ],
+  },
+  {
+    id: 2,
     company: "Fortius Exp.",
-    position: "Frontend Developer",
+    position: "Full Stack Developer",
     period: "Diciembre 2024 - Febrero 2025",
     description:
       "Desarrollo de interfaz de usuario para Ecommerce de alimentos. Implementación de arquitecturas escalables y optimización de rendimiento.",
@@ -15,7 +28,7 @@ const EXPERIENCE = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     company: "Dyatec",
     position: "Full Stack Developer",
     period: "Agosto 2024 - Noviembre 2024",
